@@ -1,0 +1,46 @@
+cycle_time: 2.5
+
+core:
+  memory_capacity_per_core: 524288  # Byte
+  memory_hierarchy: 2
+  L0_memory_capacity: 524288  # Byte
+  L0_memory_bandwidth: 128.0  # B/cycle
+  L0_memory_read_energy: 0.0501883  # nJ
+  L0_memory_write_energy: 0.0461518  # nJ
+  L1_memory_capacity: 0  # Byte
+  L1_memory_bandwidth: 8.0  
+  L1_memory_read_energy: 100  # nJ
+  L1_memory_write_energy: 100  # nJ
+  memory_width: 32.0  # Byte
+
+  spike_PE_buffer_depth: 256  # related to memory width
+
+  int8_PE_array_height: 16
+  int8_PE_array_width: 32  # related to memory width
+  int8_PE_buffer_depth: 32  # related to memory width
+  double_output: False
+  int8_PE_energy: 0.00075  # nJ
+  int8_PE_add_energy: 0.00025  # nJ for spike where only add, not multiply
+  
+  bf16_PE_array_height: 8
+  bf16_PE_array_width: 16  # related to memory width
+  bf16_PE_buffer_depth: 16  # related to memory width
+
+  bf16_PE_energy: 0.005  # nJ
+  bf16_PE_multiply_energy: 0.0025  # nJ
+  bf16_PE_add_energy: 0.0025  # nJ for spike where only add, not multiply
+  
+  vec_parallelism: 16
+
+  transpose_array_size: 16
+
+  max_dependence_window: 8
+
+noc:
+  normal_router_width: 8 # Byte
+  neuron_router_width: 1 # Byte
+  energy_per_hop: 0.003  # nJ
+
+
+emulator:
+  max_prims_per_run: 200
